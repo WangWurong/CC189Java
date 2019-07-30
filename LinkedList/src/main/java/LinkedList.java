@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class LinkedListQuestions {
+public class LinkedList {
 
     /**
      * Q2.1 remove duplicates in unsorted linked list
