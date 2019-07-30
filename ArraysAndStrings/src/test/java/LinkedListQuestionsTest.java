@@ -27,6 +27,6 @@ public class LinkedListQuestionsTest {
     public void testPartition() throws Exception {
         SinglyLinkedList test1 = new SinglyLinkedList(new int[]{3, 5, 8, 5, 10, 2, 1});
         linkedListQuestions.partition(test1, 5);
-//        Assert.assertEquals("3 -> 2 -> 1 -> 5 -> 8 -> 5 -> 10\n", test1.printout());
+        Assert.assertEquals("1 -> 2 -> 3 -> 5 -> 8 -> 5 -> 10\n", test1.printout());
     }
 }

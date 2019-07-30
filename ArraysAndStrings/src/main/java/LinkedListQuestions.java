@@ -87,13 +87,19 @@ public class LinkedListQuestions {
     public void partition(SinglyLinkedList input, int x) {
         IntNode dummy = new IntNode(0);
         dummy.next = input.head;
-        IntNode end = input.head;
-        IntNode cur = end.next;
-        while(cur!= null) {
-            if (cur.val < x) {
+        IntNode cur = input.head;
+        while(cur.next != null) {
+            if (cur.next.val < x) {
                 // insert after dummy
-                dummy.next = 
+                IntNode newNode = cur.next;
+                cur.next = cur.next.next;
+                newNode.next = dummy.next;
+                dummy.next = newNode;
+            } else {
+                // keep this node after end
+                cur = cur.next;
             }
         }
+        input.head = dummy.next;
     }
 }
