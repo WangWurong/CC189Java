@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class LinkedListQuestions {
+public class LinkedList {
 
     /**
      * Q2.1 remove duplicates in unsorted linked list
@@ -88,12 +88,22 @@ public class LinkedListQuestions {
         IntNode dummy = new IntNode(0);
         dummy.next = input.head;
         IntNode end = input.head;
-        IntNode cur = end.next;
-        while(cur!= null) {
-            if (cur.val < x) {
+        IntNode cur = input.head;
+        while(cur!= null && cur.next != null) {
+            input.printout();
+            IntNode newNode = cur.next;
+            cur.next = cur.next.next;
+            if (newNode.val < x) {
                 // insert after dummy
-                dummy.next = 
+                newNode.next = dummy.next.next;
+                dummy.next = newNode;
+            } else {
+                // insert after the end
+                newNode.next = end.next;
+                end.next = newNode;
             }
+            cur = cur.next;
+            input.printout();
         }
     }
 }
