@@ -8,6 +8,7 @@
         <module>ArraysAndStrings</module>
         <module>DataStructureCommon</module>
         <module>LinkedList</module>
+        <module>StacksAndQueues</module>
     </modules>
     <groupId>com.rabbitkingdom</groupId>
     <artifactId>Rabbit-DataStructure</artifactId>
