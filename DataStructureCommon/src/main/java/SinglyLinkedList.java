@@ -44,4 +44,33 @@ public class SinglyLinkedList {
         System.out.print(cur.val + "\n");
         return sb.toString();
     }
+
+    public static SinglyLinkedList reverseAndClone(SinglyLinkedList list) {
+        SinglyLinkedList res = new SinglyLinkedList();
+        res.head = new IntNode(0);
+        IntNode cur1 = res.head; // cur of new list
+        IntNode cur2 = list.head; // cur of original list
+        while (cur2 != null) {
+            IntNode newNode = new IntNode(cur2.val);
+            newNode.next = cur1.next;
+            cur1.next = newNode;
+            cur2 = cur2.next;
+        }
+        res.head = res.head.next;
+        return res;
+    }
+
+    public static boolean compareList(SinglyLinkedList list1, SinglyLinkedList list2) {
+        IntNode cur1 = list1.head;
+        IntNode cur2 = list2.head;
+        while (cur1 != null && cur2 != null) {
+            if (cur1.val != cur2.val) {
+                return false;
+            }
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+
+        return cur1 == null && cur2 == null;
+    }
 }
